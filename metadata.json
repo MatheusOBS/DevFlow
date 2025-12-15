@@ -1,0 +1,5 @@
+{
+  "name": "DevFlow",
+  "description": "Uma aplicação de Gestão de Tarefas Full Stack pronta para produção, com autenticação JWT, arquitetura limpa e design responsivo.",
+  "requestFramePermissions": []
+}
