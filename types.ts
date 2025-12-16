@@ -5,8 +5,14 @@ export interface User {
 }
 
 export enum TaskStatus {
-  PENDING = 'pending',
-  COMPLETED = 'completed'
+  PENDING = "pending",
+  COMPLETED = "completed",
+}
+
+export enum TaskPriority {
+  LOW = "low",
+  MEDIUM = "medium",
+  HIGH = "high",
 }
 
 export interface Task {
@@ -16,6 +22,10 @@ export interface Task {
   status: TaskStatus;
   user_id: string;
   created_at: string;
+  start_date?: string;
+  end_date?: string;
+  priority: TaskPriority;
+  tags: string[];
 }
 
 export interface AuthResponse {

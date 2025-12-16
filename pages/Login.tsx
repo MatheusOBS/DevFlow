@@ -25,7 +25,12 @@ export const Login: React.FC<LoginProps> = ({ onSwitch }) => {
       const data = await authService.login(email, password);
       login(data.token, data.user);
     } catch (err: any) {
-      setError(err.response?.data?.message || err.message || 'Login falhou');
+      const msg = err.response?.data?.message || err.message || 'Login falhou';
+      if (msg.includes('Email not confirmed')) {
+        setError('Por favor, verifique seu e-mail para confirmar a conta antes de entrar.');
+      } else {
+        setError(msg);
+      }
     } finally {
       setLoading(false);
     }
